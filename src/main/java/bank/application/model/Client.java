@@ -1,22 +1,29 @@
 package bank.application.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.List;
 
 
+@Entity
 public class Client {
 
-    private String clientID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer clientID;
     private String FIO;
     private int age;
-    private List<Account> accounts;
-    private List<Credit> credits;
+    //private List<Account> accounts;
+    //private List<Credit> credits;
 
-    public String getClientId() {
+    public Integer getClientId() {
         return clientID;
     }
 
-    public void setClientID(String clientID) {
+    public void setClientID(Integer clientID) {
         this.clientID = clientID;
     }
 
@@ -36,20 +43,20 @@ public class Client {
         this.age = age;
     }
 
-    public List<Account> getAccounts() {
-        return accounts;
-    }
+//    public List<Account> getAccounts() {
+//        return accounts;
+//    }
 
-    public void setAccounts(List<Account> accounts) {
-        this.accounts = accounts;
-    }
+//    public void setAccounts(List<Account> accounts) {
+//        this.accounts = accounts;
+//    }
 
-    public List<Credit> getCredits() {
-        return credits;
-    }
+//    public List<Credit> getCredits() {
+//        return credits;
+//    }
 
-    public void setCredits(List<Credit> credits) {
-        this.credits = credits;
-    }
+//    public void setCredits(List<Credit> credits) {
+//        this.credits = credits;
+//    }
 
 }

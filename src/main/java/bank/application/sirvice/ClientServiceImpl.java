@@ -5,6 +5,7 @@ import bank.application.model.Client;
 import org.springframework.stereotype.Component;
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Optional;
 
 
 @Component
@@ -15,12 +16,11 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client addNewClient(final Client client) {
-
         return clientDao.insertClient(client);
     }
 
     @Override
-    public Client getClient(final String clientId) {
+    public Optional<Client> getClient(final Integer clientId) {
         return clientDao.findById(clientId);
     }
 

@@ -3,6 +3,7 @@ bank\application\model\Account.class
 bank\application\dao\ClientDao.class
 bank\application\dao\AccountJdbcTemplateDao.class
 bank\application\controller\ClientController.class
+bank\application\repository\ClientRepository.class
 ru\bank\Clients.class
 bank\application\sirvice\ClientServiceImpl.class
 ru\bank\Account.class
@@ -16,5 +17,6 @@ bank\application\model\Credit.class
 bank\application\model\CreditRequest.class
 bank\application\sirvice\AccountServiceImpl.class
 bank\application\sirvice\ClientService.class
+bank\application\dao\ClientMapper.class
 bank\application\controller\AccountController.class
 bank\application\model\Client.class

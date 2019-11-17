@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="Добавил работу с бд">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/repository/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientJdbcTemplateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/sirvice/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/sirvice/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/sirvice/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/sirvice/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resourses/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resourses/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Bank-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientJdbcTemplateDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/sirvice/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/sirvice/ClientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/sirvice/ClientServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/sirvice/ClientServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.bank.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.bank.AppTest.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -35,11 +63,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Spring_Framework_3/pom.xml" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -101,6 +129,14 @@
       <workItem from="1565154832586" duration="2267000" />
       <workItem from="1565930455263" duration="1441000" />
     </task>
+    <task id="LOCAL-00001" summary="Тестовый коммит">
+      <created>1570460819023</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570460819024</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,19 +147,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Тестовый коммит" />
+    <MESSAGE value="Добавил работу с бд" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил работу с бд" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/bank/application/dao/ClientJdbcTemplateDao.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDaoImpl.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
