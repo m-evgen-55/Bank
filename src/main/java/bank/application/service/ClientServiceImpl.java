@@ -4,7 +4,6 @@ import bank.application.dao.ClientDao;
 import bank.application.model.Client;
 import org.springframework.stereotype.Component;
 import javax.inject.Inject;
-import java.util.List;
 
 
 @Component
@@ -26,17 +25,12 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client getClientById(final Integer clientId) {
-        return clientDao.getClientById(clientId).orElse(null);
+        return clientDao.getClientById(clientId);
     }
 
     @Override
     public void deleteClient(Integer clientId) {
         clientDao.deleteClient(clientId);
     }
-
-//    @Override
-//    public List getAccountRefId(String accountId) {
-//        return clientDao.getAccountRefId(accountId);
-//    }
 
 }

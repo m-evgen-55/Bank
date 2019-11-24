@@ -1,6 +1,7 @@
 package bank.application.controller;
 
 import bank.application.model.Account;
+import bank.application.model.Client;
 import bank.application.service.AccountService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javax.inject.Inject;
 import java.math.BigDecimal;
-import java.util.UUID;
 
 
 @RestController
@@ -18,20 +18,51 @@ public class AccountController {
     private AccountService accountService;
 
     @RequestMapping(value = "/addNewAccount", method = RequestMethod.POST)
-    public void addNewAccount(
-            @RequestParam("clientId") String clientId,
+    public Account addNewAccount(
+            @RequestParam("clientId") Integer clientRefId,
             @RequestParam("putSum") BigDecimal putSum
     ) {
-        accountService.createNewAccount(toAccount(clientId, putSum));
+        Account account = new Account();
+        account.setClienReftId(clientRefId);
+        account.setBalance(putSum);
+        return accountService.addNewAccount(account);
     }
 
+    @RequestMapping(value = "/putMoneyOnAccount", method = RequestMethod.POST)
+    public Account putMoney(
+            @RequestParam("accountId") Integer accountId,
+            @RequestParam("putSum") BigDecimal putSum
+    ) {
+        return accountService.putMoney(accountId, putSum);
+    }
 
-    private static Account toAccount(String clientId, BigDecimal putSum) {
-        Account account = new Account();
-        account.setAccountId(UUID.randomUUID().toString());
-        account.setClienReftId(clientId);
-        account.setBalance(putSum);
-        return account;
+    @RequestMapping(value = "/getMoneyFromAccount", method = RequestMethod.POST)
+    public Account getMoney(
+            @RequestParam("accountId") Integer accountId,
+            @RequestParam("getSum") BigDecimal getSum
+    ) {
+        return accountService.getMoney(accountId, getSum);
+    }
+
+    @RequestMapping(value = "/findAccountById", method = RequestMethod.GET)
+    public Account findAccountById(
+            @RequestParam("accountId") Integer accountId
+    ) {
+        return accountService.findAccountById(accountId);
+    }
+
+    // не работает. Переделать чтобы возвращал Integer clientRefId
+    @RequestMapping(value = "/getClientRefId", method = RequestMethod.GET)
+    public Client getClientRefId(
+            @RequestParam("accountId") Integer accountId
+    ) {
+        return accountService.getClientRefId(accountId);
+    }
+
+    @RequestMapping(value = "/deleteAccountById", method = RequestMethod.DELETE)
+    public void deleteAccountById(
+            @RequestParam("accountId") Integer accountId) {
+        accountService.deleteAccount(accountId);
     }
 
 }

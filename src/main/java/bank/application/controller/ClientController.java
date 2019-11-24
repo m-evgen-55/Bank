@@ -30,6 +30,7 @@ public class ClientController {
     public Client getClientById(
             @RequestParam("clientId") Integer clientId) {
         return clientService.getClientById(clientId);
+        // попробовать создать объект клиента
     }
 
     // не работает
@@ -38,5 +39,9 @@ public class ClientController {
             @RequestParam("clientId") Integer clientId) {
         clientService.deleteClient(clientId);
     }
+
+    // добавить метод, который возвращает список всех аккаунтов клиента
+
+    // добавить метод, который возвращает список всех кредитов клиента
 
 }

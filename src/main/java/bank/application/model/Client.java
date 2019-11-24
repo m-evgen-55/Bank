@@ -1,13 +1,14 @@
 package bank.application.model;
 
+import org.springframework.context.annotation.Primary;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
-import java.util.List;
 
 
+@Primary
 @Entity
 public class Client {
 
@@ -16,8 +17,6 @@ public class Client {
     private Integer clientID;
     private String FIO;
     private int age;
-    //private List<Account> accounts;
-    //private List<Credit> credits;
 
     public Integer getClientId() {
         return clientID;
@@ -42,21 +41,5 @@ public class Client {
     public void setAge(int age) {
         this.age = age;
     }
-
-//    public List<Account> getAccounts() {
-//        return accounts;
-//    }
-
-//    public void setAccounts(List<Account> accounts) {
-//        this.accounts = accounts;
-//    }
-
-//    public List<Credit> getCredits() {
-//        return credits;
-//    }
-
-//    public void setCredits(List<Credit> credits) {
-//        this.credits = credits;
-//    }
 
 }
