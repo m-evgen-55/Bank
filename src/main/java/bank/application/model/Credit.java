@@ -11,6 +11,8 @@ public class Credit {
     private int duration;
     private int clientRefId;
 
+    // clientId
+
     public String getCreditId() {
         return creditId;
     }

@@ -9,9 +9,8 @@ import java.util.Optional;
 public interface ClientDao {
 
     Client insertClient (final Client client);
-    Optional<Client> findById(final Integer clientId);
-    void updateClient (final Client client);
-    void deleteClient(final Client client);
-    List getAccountRefId(final String accountId);
+    Optional<Client> getClientById(final Integer clientId);
+    void deleteClient(final Integer clientId);
+    //List getAccountRefId(final String accountId);
 
 }

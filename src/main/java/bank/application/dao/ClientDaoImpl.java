@@ -20,23 +20,18 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    public Optional<Client> findById(Integer clientId) {
+    public Optional<Client> getClientById(Integer clientId) {
         return clientRepository.findById(clientId);
     }
 
     @Override
-    public void updateClient(Client client) {
-
+    public void deleteClient(Integer clientId) {
+        clientRepository.deleteById(clientId);
     }
 
-    @Override
-    public void deleteClient(Client client) {
-
-    }
-
-    @Override
-    public List getAccountRefId(String accountId) {
-        return null;
-    }
+//    @Override
+//    public List getAccountRefId(String accountId) {
+//        return null;
+//    }
 
 }

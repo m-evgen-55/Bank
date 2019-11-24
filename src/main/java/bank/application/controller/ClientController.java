@@ -1,13 +1,12 @@
 package bank.application.controller;
 
 import bank.application.model.Client;
-import bank.application.sirvice.ClientService;
+import bank.application.service.ClientService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javax.inject.Inject;
-import java.util.Optional;
 
 
 @RestController
@@ -26,11 +25,18 @@ public class ClientController {
         return clientService.addNewClient(client);
     }
 
-    // избавиться от optional
+    // не работает
     @RequestMapping(value = "/getClientById", method = RequestMethod.GET)
-    public Optional<Client> getClientById(
+    public Client getClientById(
             @RequestParam("clientId") Integer clientId) {
-        return clientService.getClient(clientId);
+        return clientService.getClientById(clientId);
+    }
+
+    // не работает
+    @RequestMapping(value = "/deleteClientById", method = RequestMethod.DELETE)
+    public void deleteClientById(
+            @RequestParam("clientId") Integer clientId) {
+        clientService.deleteClient(clientId);
     }
 
 }

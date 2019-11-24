@@ -1,7 +1,7 @@
 package bank.application.controller;
 
 import bank.application.model.Account;
-import bank.application.sirvice.AccountService;
+import bank.application.service.AccountService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

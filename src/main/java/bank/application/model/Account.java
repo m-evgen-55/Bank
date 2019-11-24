@@ -9,6 +9,8 @@ public class Account {
     private BigDecimal balance;
     private String clienReftId;
 
+    // clientId
+
     public String getAccountId() {
         return accountId;
     }

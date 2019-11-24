@@ -1,4 +1,4 @@
-package bank.application.sirvice;
+package bank.application.service;
 
 import bank.application.dao.AccountDao;
 import bank.application.model.Account;

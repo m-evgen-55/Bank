@@ -1,9 +1,8 @@
-package bank.application.sirvice;
+package bank.application.service;
 
 import bank.application.model.Account;
-import sun.management.counter.AbstractCounter;
+
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 
 public interface AccountService {
