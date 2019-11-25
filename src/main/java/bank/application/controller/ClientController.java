@@ -27,6 +27,7 @@ public class ClientController {
         return clientService.addNewClient(client);
     }
 
+    // Вопрос: обязательное ли использовать Integer для id? Почему не int?
     // не работает
     @RequestMapping(value = "/getClientById", method = RequestMethod.GET)
     public Client getClientById(

@@ -5,6 +5,8 @@ import bank.application.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 
 @Component
 public class ClientDaoImpl implements ClientDao {
@@ -19,10 +21,8 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    public Client getClientById(Integer clientId) {
-        Client client = clientRepository.findById(clientId).orElse(null);
-        // если client == null, кинуть Exception что клиент не найден
-        return client;
+    public Optional<Client> getClientById(Integer clientId) {
+        return clientRepository.findById(clientId);
     }
 
     @Override

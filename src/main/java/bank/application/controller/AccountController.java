@@ -1,7 +1,6 @@
 package bank.application.controller;
 
 import bank.application.model.Account;
-import bank.application.model.Client;
 import bank.application.service.AccountService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,7 +49,7 @@ public class AccountController {
     ) {
         return accountService.findAccountById(accountId);
     }
-    
+
     @RequestMapping(value = "/getClientRefId", method = RequestMethod.GET)
     public Integer getClientRefId(
             @RequestParam("accountId") Integer accountId

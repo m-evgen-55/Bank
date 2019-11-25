@@ -19,13 +19,18 @@ public class ClientServiceImpl implements ClientService {
         if (client.getAge() >= CLIENT_MIN_AGE) {
             return clientDao.insertClient(client);
         }
-        // сделать Exception
+        // кинуть Exception что клиент не достиг совершеннолетия
         return null;
     }
 
     @Override
     public Client getClientById(final Integer clientId) {
-        return clientDao.getClientById(clientId);
+        Client client = clientDao.getClientById(clientId).orElse(null);
+        if (client != null) {
+            return client;
+        }
+        // кинуть Exception что клиент не найден
+        return null;
     }
 
     @Override

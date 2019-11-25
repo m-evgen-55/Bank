@@ -22,10 +22,6 @@ public class Client {
         return clientID;
     }
 
-    public void setClientID(Integer clientID) {
-        this.clientID = clientID;
-    }
-
     public String getFIO() {
         return FIO;
     }

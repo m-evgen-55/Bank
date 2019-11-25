@@ -2,11 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/CreditController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/CreditDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/CreditDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/repository/CreditRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Credit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Credit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/CreditRequest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/FinOrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Credit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Credit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/CreditRequest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -118,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574608795459</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Поправил метод getClientRefId у AccountController">
+      <created>1574663779344</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574663779344</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +172,14 @@
     <MESSAGE value="Добавил работу с бд" />
     <MESSAGE value="Добавил проверку на возраст при создании клиента" />
     <MESSAGE value="Добавил методы для работы с аккаунтом" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил методы для работы с аккаунтом" />
+    <MESSAGE value="Поправил метод getClientRefId у AccountController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил метод getClientRefId у AccountController" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="clientDao" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

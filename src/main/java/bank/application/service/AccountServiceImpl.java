@@ -1,9 +1,7 @@
 package bank.application.service;
 
 import bank.application.dao.AccountDao;
-import bank.application.dao.ClientDao;
 import bank.application.model.Account;
-import bank.application.model.Client;
 import org.springframework.stereotype.Component;
 import javax.inject.Inject;
 import java.math.BigDecimal;
@@ -15,8 +13,6 @@ public class AccountServiceImpl implements AccountService {
     @Inject
     private AccountDao accountDao;
 
-    @Inject
-    private ClientDao clientDao;
 
     @Override
     public Account addNewAccount(final Account account) {
@@ -26,44 +22,66 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account putMoney(final Integer accountId, final BigDecimal putSum) {
         Account account = accountDao.findAccountById(accountId).orElse(null);
-        // если account == null, кинуть Exception что аккаунт не найден
-        BigDecimal currentAccountBallance = account.getBalance();
-        // реализовать проверку что внесенная сумма положительня
-        BigDecimal newAccountBallance = currentAccountBallance.add(putSum);
-        account.setBalance(newAccountBallance);
-        return accountDao.insertAccount(account);
+        if (account != null) {
+            if (putSum.compareTo(putSum.max(BigDecimal.valueOf(0))) == 1) {
+                BigDecimal currentAccountBalance = account.getBalance();
+                BigDecimal newAccountBallance = currentAccountBalance.add(putSum);
+                account.setBalance(newAccountBallance);
+                return accountDao.insertAccount(account);
+            }
+            // кинуть Exception что внесенная сумма отрицательна
+            return null;
+        }
+        // кинуть Exception что аккаунт не найден
+        return null;
     }
 
     @Override
     public Account getMoney(final Integer accountId, final BigDecimal getSum) {
         Account account = accountDao.findAccountById(accountId).orElse(null);
-        // если account == null, кинуть Exception что аккаунт не найден
-        BigDecimal currentAccountBallance = account.getBalance();
-        // реализовать проверку что запрашиваемая сумма положительна
-        if (currentAccountBallance.compareTo(getSum) == 1 |
-                currentAccountBallance.compareTo(getSum) == 0) {
-            BigDecimal newAccountBallance = currentAccountBallance.subtract(getSum);
-            account.setBalance(newAccountBallance);
-            return accountDao.insertAccount(account);
+        BigDecimal currentAccountBalance = account.getBalance();
+        if (account != null) {
+            if (getSum.compareTo(getSum.max(BigDecimal.valueOf(0))) ==1) {
+                if (currentAccountBalance.compareTo(getSum) == 1 |
+                        currentAccountBalance.compareTo(getSum) == 0) {
+                    BigDecimal newAccountBallance = currentAccountBalance.subtract(getSum);
+                    account.setBalance(newAccountBallance);
+                    return accountDao.insertAccount(account);
+                }
+                // кинуть Exception что недостаточно средств на счету
+                return null;
+            }
+            // кинуть Exception что запрашиваемая сумма отрицательна
+            return null;
         }
-        // сделать Exception что недостаточно средств на счету
+        // кинуть Exception что аккаунт не найден
         return null;
     }
 
     @Override
     public Account findAccountById(Integer accountId) {
-        return accountDao.findAccountById(accountId).orElse(null);
-        // если account == null, кинуть Exception что аккаунт не найден
+        Account account = accountDao.findAccountById(accountId).orElse(null);
+        if (account != null) {
+            return account;
+        }
+        // кинуть Exception что аккаунт не найден
+        return null;
     }
 
     @Override
     public Integer getClientRefId(final Integer accountId) {
-        //return accountDao.getClientRefId(clientRefId);
         Account account = accountDao.findAccountById(accountId).orElse(null);
-        // если account == null, кинуть Exception что аккаунт не найден
-        return account.getClienReftId();
-        // если не найден clientRefId то кинуть Exception что аккаунт не привязан
-        // ни к одному клиенту и удалить аккаунт
+        if (account != null) {
+            Integer clientRefId = account.getClienReftId();
+            if (clientRefId != null) {
+                return clientRefId;
+            }
+            // кинуть Exception что аккаунт не привязан ни к одному клиенту
+            // удалить аккаунт
+            return null;
+        }
+        // кинуть Exception что аккаунт не найден
+        return null;
     }
 
     @Override

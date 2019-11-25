@@ -1,8 +1,6 @@
 package bank.application.dao;
 
 import bank.application.model.Account;
-
-import java.math.BigDecimal;
 import java.util.Optional;
 
 

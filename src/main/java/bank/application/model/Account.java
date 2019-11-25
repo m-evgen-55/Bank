@@ -21,10 +21,6 @@ public class Account {
         return accountId;
     }
 
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
-    }
-
     public BigDecimal getBalance() {
         return balance;
     }

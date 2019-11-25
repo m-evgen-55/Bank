@@ -1,32 +1,35 @@
 package bank.application.model;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.math.BigDecimal;
 
 
+@Entity
 public class Credit {
 
-    private String creditId;
-    private int sunOfCredit;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer creditId;
+    private BigDecimal sumOfCredit;
     private int creditRate;
     private int duration;
-    private int clientRefId;
+    private BigDecimal returnSum;
+    private Integer clientRefId;
 
-    // clientId
 
-    public String getCreditId() {
+    public Integer getCreditId() {
         return creditId;
     }
 
-    public void setCreditId(String creditId) {
-        this.creditId = creditId;
+    public BigDecimal getSumOfCredit() {
+        return sumOfCredit;
     }
 
-    public int getSunOfCredit() {
-        return sunOfCredit;
-    }
-
-    public void setSunOfCredit(int sunOfCredit) {
-        this.sunOfCredit = sunOfCredit;
+    public void setSumOfCredit(BigDecimal sumOfCredit) {
+        this.sumOfCredit = sumOfCredit;
     }
 
     public int getCreditRate() {
@@ -45,11 +48,19 @@ public class Credit {
         this.duration = duration;
     }
 
-    public int getClientRefId() {
+    public BigDecimal getReturnSum() {
+        return returnSum;
+    }
+
+    public void setReturnSum(BigDecimal returnSum) {
+        this.returnSum = returnSum;
+    }
+
+    public Integer getClientRefId() {
         return clientRefId;
     }
 
-    public void setClientRefId(int clientRefId) {
+    public void setClientRefId(Integer clientRefId) {
         this.clientRefId = clientRefId;
     }
 
