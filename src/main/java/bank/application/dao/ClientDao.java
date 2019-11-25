@@ -1,7 +1,6 @@
 package bank.application.dao;
 
 import bank.application.model.Client;
-
 import java.util.Optional;
 
 

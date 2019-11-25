@@ -14,12 +14,12 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer clientID;
+    private Integer clientId;
     private String FIO;
     private int age;
 
     public Integer getClientId() {
-        return clientID;
+        return clientId;
     }
 
     public String getFIO() {

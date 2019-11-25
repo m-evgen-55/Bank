@@ -24,7 +24,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client getClientById(final Integer clientId) {
+    public Client getClientById(Integer clientId) {
         Client client = clientDao.getClientById(clientId).orElse(null);
         if (client != null) {
             return client;
