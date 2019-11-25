@@ -57,13 +57,13 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Client getClientRefId(final Integer accountId) {
+    public Integer getClientRefId(final Integer accountId) {
         //return accountDao.getClientRefId(clientRefId);
         Account account = accountDao.findAccountById(accountId).orElse(null);
         // если account == null, кинуть Exception что аккаунт не найден
-        return clientDao.getClientById(account.getClienReftId());
-        // если клиент не найден то кинуть Exception что такой клиент не найден
-        // и удалить аккаунт т.к. он не привязан ни к одному клиенту
+        return account.getClienReftId();
+        // если не найден clientRefId то кинуть Exception что аккаунт не привязан
+        // ни к одному клиенту и удалить аккаунт
     }
 
     @Override

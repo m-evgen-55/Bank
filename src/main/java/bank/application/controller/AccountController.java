@@ -50,10 +50,9 @@ public class AccountController {
     ) {
         return accountService.findAccountById(accountId);
     }
-
-    // не работает. Переделать чтобы возвращал Integer clientRefId
+    
     @RequestMapping(value = "/getClientRefId", method = RequestMethod.GET)
-    public Client getClientRefId(
+    public Integer getClientRefId(
             @RequestParam("accountId") Integer accountId
     ) {
         return accountService.getClientRefId(accountId);

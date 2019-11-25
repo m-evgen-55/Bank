@@ -2,39 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/repository/AccountRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountJdbcTemplateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/AccountDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bank/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bank/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bank/Clients.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bank/Credit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/dao/AccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/dao/AccountDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/dao/AccountJdbcTemplateDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/dao/ClientDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/bank/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/bank/Clients.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/bank/Credit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +38,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Spring_Framework_3/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -139,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574594957981</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавил методы для работы с аккаунтом">
+      <created>1574608795459</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574608795459</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +141,7 @@
     <MESSAGE value="Тестовый коммит" />
     <MESSAGE value="Добавил работу с бд" />
     <MESSAGE value="Добавил проверку на возраст при создании клиента" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил проверку на возраст при создании клиента" />
+    <MESSAGE value="Добавил методы для работы с аккаунтом" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил методы для работы с аккаунтом" />
   </component>
 </project>
