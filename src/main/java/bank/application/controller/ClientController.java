@@ -21,10 +21,7 @@ public class ClientController {
     public Client addNewClient(
             @RequestParam("fio") String fio,
             @RequestParam("age") int age) {
-        Client client = new Client();
-        client.setFIO(fio);
-        client.setAge(age);
-        return clientService.addNewClient(client);
+        return clientService.addNewClient(fio, age);
     }
 
     // Вопрос: обязательное ли использовать Integer для id? Почему не int?

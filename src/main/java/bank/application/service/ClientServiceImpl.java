@@ -15,8 +15,11 @@ public class ClientServiceImpl implements ClientService {
     private ClientDao clientDao;
 
     @Override
-    public Client addNewClient(final Client client) {
-        if (client.getAge() >= CLIENT_MIN_AGE) {
+    public Client addNewClient(final String fio, final int age) {
+        if (age >= CLIENT_MIN_AGE) {
+            Client client = new Client();
+            client.setFIO(fio);
+            client.setAge(age);
             return clientDao.insertClient(client);
         }
         // кинуть Exception что клиент не достиг совершеннолетия
@@ -24,7 +27,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client getClientById(Integer clientId) {
+    public Client getClientById(final Integer clientId) {
         Client client = clientDao.getClientById(clientId).orElse(null);
         if (client != null) {
             return client;
@@ -34,7 +37,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public void deleteClient(Integer clientId) {
+    public void deleteClient(final Integer clientId) {
         clientDao.deleteClient(clientId);
     }
 

@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/dao/ClientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574683819057</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Поправил API методы клиента">
+      <created>1574698749544</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574698749544</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +170,8 @@
     <MESSAGE value="Добавил методы для работы с аккаунтом" />
     <MESSAGE value="Поправил метод getClientRefId у AccountController" />
     <MESSAGE value="Поправил API методы крудита" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поправил API методы крудита" />
+    <MESSAGE value="Поправил API методы клиента" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил API методы клиента" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

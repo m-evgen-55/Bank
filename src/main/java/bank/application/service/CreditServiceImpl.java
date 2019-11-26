@@ -22,8 +22,8 @@ public class CreditServiceImpl implements CreditService {
 
 
     @Override
-    public Credit addNewCredit(Integer clientId, BigDecimal creditSum,
-                               int creditTimeInMonth, BigDecimal monthSalary) {
+    public Credit addNewCredit(final Integer clientId, final BigDecimal creditSum,
+                               final int creditTimeInMonth, final BigDecimal monthSalary) {
 
         Client client = clientDao.getClientById(clientId).orElse(null);
         BigDecimal creditTime = BigDecimal.valueOf(creditTimeInMonth);
@@ -52,7 +52,7 @@ public class CreditServiceImpl implements CreditService {
     }
 
     @Override
-    public Credit payForCredit(Integer creditId, BigDecimal paySum) {
+    public Credit payForCredit(final Integer creditId, final BigDecimal paySum) {
         Credit credit = creditDao.findCreditById(creditId).orElse(null);
         if (credit != null) {
             credit.setReturnSum(credit.getReturnSum().add(paySum));
@@ -66,7 +66,7 @@ public class CreditServiceImpl implements CreditService {
     }
 
     @Override
-    public Integer getClientRefId(Integer creditId) {
+    public Integer getClientRefId(final Integer creditId) {
         Credit credit = creditDao.findCreditById(creditId).orElse(null);
         if (credit != null) {
             Integer clientRefId = credit.getClientRefId();

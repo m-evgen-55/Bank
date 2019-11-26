@@ -16,17 +16,16 @@ public class AccountController {
     @Inject
     private AccountService accountService;
 
+
     @RequestMapping(value = "/addNewAccount", method = RequestMethod.POST)
     public Account addNewAccount(
             @RequestParam("clientId") Integer clientRefId,
             @RequestParam("putSum") BigDecimal putSum
     ) {
-        Account account = new Account();
-        account.setClienReftId(clientRefId);
-        account.setBalance(putSum);
-        return accountService.addNewAccount(account);
+        return accountService.addNewAccount(clientRefId, putSum);
     }
 
+    // не работает
     @RequestMapping(value = "/putMoneyOnAccount", method = RequestMethod.POST)
     public Account putMoney(
             @RequestParam("accountId") Integer accountId,
@@ -35,6 +34,7 @@ public class AccountController {
         return accountService.putMoney(accountId, putSum);
     }
 
+    // не работает
     @RequestMapping(value = "/getMoneyFromAccount", method = RequestMethod.POST)
     public Account getMoney(
             @RequestParam("accountId") Integer accountId,

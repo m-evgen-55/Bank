@@ -15,7 +15,10 @@ public class AccountServiceImpl implements AccountService {
 
 
     @Override
-    public Account addNewAccount(final Account account) {
+    public Account addNewAccount(final Integer clientRefId, final BigDecimal putSum) {
+        Account account = new Account();
+        account.setClienReftId(clientRefId);
+        account.setBalance(putSum);
         return accountDao.insertAccount(account);
     }
 
@@ -59,7 +62,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Account findAccountById(Integer accountId) {
+    public Account findAccountById(final Integer accountId) {
         Account account = accountDao.findAccountById(accountId).orElse(null);
         if (account != null) {
             return account;
@@ -85,7 +88,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void deleteAccount(Integer accountId) {
+    public void deleteAccount(final Integer accountId) {
         accountDao.deleteAccount(accountId);
     }
 

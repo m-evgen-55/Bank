@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public interface AccountService {
 
-    Account addNewAccount(final Account account);
+    Account addNewAccount(final Integer clientRefId, final BigDecimal putSum);
     Account putMoney(final Integer accountId, BigDecimal putSum);
     Account getMoney(final Integer accountId, final BigDecimal getSum);
     Account findAccountById(final Integer accountId);
