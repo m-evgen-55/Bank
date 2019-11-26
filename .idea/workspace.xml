@@ -5,11 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/CreditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/CreditController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" afterDir="false" />
     </list>
@@ -144,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574698749544</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Перенес логику в сервис">
+      <created>1574780367173</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574780367173</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,9 +175,19 @@
     <MESSAGE value="Поправил метод getClientRefId у AccountController" />
     <MESSAGE value="Поправил API методы крудита" />
     <MESSAGE value="Поправил API методы клиента" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поправил API методы клиента" />
+    <MESSAGE value="Перенес логику в сервис" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перенес логику в сервис" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="clientDao" language="JAVA" />

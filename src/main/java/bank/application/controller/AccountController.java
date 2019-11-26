@@ -25,7 +25,6 @@ public class AccountController {
         return accountService.addNewAccount(clientRefId, putSum);
     }
 
-    // не работает
     @RequestMapping(value = "/putMoneyOnAccount", method = RequestMethod.POST)
     public Account putMoney(
             @RequestParam("accountId") Integer accountId,
@@ -34,7 +33,6 @@ public class AccountController {
         return accountService.putMoney(accountId, putSum);
     }
 
-    // не работает
     @RequestMapping(value = "/getMoneyFromAccount", method = RequestMethod.POST)
     public Account getMoney(
             @RequestParam("accountId") Integer accountId,

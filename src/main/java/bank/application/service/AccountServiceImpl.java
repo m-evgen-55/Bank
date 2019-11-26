@@ -26,7 +26,7 @@ public class AccountServiceImpl implements AccountService {
     public Account putMoney(final Integer accountId, final BigDecimal putSum) {
         Account account = accountDao.findAccountById(accountId).orElse(null);
         if (account != null) {
-            if (putSum.compareTo(putSum.max(BigDecimal.valueOf(0))) == 1) {
+            if (putSum.compareTo(BigDecimal.valueOf(0)) > 0) {
                 BigDecimal currentAccountBalance = account.getBalance();
                 BigDecimal newAccountBallance = currentAccountBalance.add(putSum);
                 account.setBalance(newAccountBallance);
@@ -44,8 +44,8 @@ public class AccountServiceImpl implements AccountService {
         Account account = accountDao.findAccountById(accountId).orElse(null);
         BigDecimal currentAccountBalance = account.getBalance();
         if (account != null) {
-            if (getSum.compareTo(getSum.max(BigDecimal.valueOf(0))) ==1) {
-                if (currentAccountBalance.compareTo(getSum) == 1 |
+            if (getSum.compareTo(BigDecimal.valueOf(0)) > 0) {
+                if (currentAccountBalance.compareTo(getSum) > 0 ||
                         currentAccountBalance.compareTo(getSum) == 0) {
                     BigDecimal newAccountBallance = currentAccountBalance.subtract(getSum);
                     account.setBalance(newAccountBallance);

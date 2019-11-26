@@ -15,8 +15,7 @@ public class ClientController {
     @Inject
     private ClientService clientService;
 
-    // Вопрос: корректно ли в этом методе создаать нового клиента?
-    // может вынести это в сервис?
+
     @RequestMapping(value = "/addNewClient", method = RequestMethod.POST)
     public Client addNewClient(
             @RequestParam("fio") String fio,

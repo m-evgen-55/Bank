@@ -17,7 +17,7 @@ public class CreditController {
     private CreditService creditService;
 
 
-    // не работает. Подозреваю потому что в сервисе используется не рабочий метод findClientByIc
+    // не работает. Проверить вычисления в сервисе
     @RequestMapping(value = "/getCredit", method = RequestMethod.POST)
     public Credit getCredit(
             @RequestParam("clientId") Integer clientId,
