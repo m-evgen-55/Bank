@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/CreditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/CreditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574780367173</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Поправил методы putSum и getSum у аккаунта">
+      <created>1574782209599</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574782209599</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,18 +179,10 @@
     <MESSAGE value="Поправил API методы крудита" />
     <MESSAGE value="Поправил API методы клиента" />
     <MESSAGE value="Перенес логику в сервис" />
-    <option name="LAST_COMMIT_MESSAGE" value="Перенес логику в сервис" />
+    <MESSAGE value="Поправил методы putSum и getSum у аккаунта" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил методы putSum и getSum у аккаунта" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="clientDao" language="JAVA" />

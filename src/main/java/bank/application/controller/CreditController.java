@@ -16,8 +16,7 @@ public class CreditController {
     @Inject
     private CreditService creditService;
 
-
-    // не работает. Проверить вычисления в сервисе
+    
     @RequestMapping(value = "/getCredit", method = RequestMethod.POST)
     public Credit getCredit(
             @RequestParam("clientId") Integer clientId,
@@ -28,7 +27,6 @@ public class CreditController {
         return creditService.addNewCredit(clientId, creditSum, creditTimeInMonth, monthSalary);
     }
 
-    // протестировать
     @RequestMapping(value = "/payForCredit", method = RequestMethod.POST)
     public Credit payForCredit(
             @RequestParam("creditId") Integer creditId,
@@ -37,7 +35,6 @@ public class CreditController {
         return creditService.payForCredit(creditId, paySum);
     }
 
-    // протестировать
     @RequestMapping(value = "/getClientReferId", method = RequestMethod.GET)
     public Integer getClientReferId(
             @RequestParam("creditId") Integer clientId

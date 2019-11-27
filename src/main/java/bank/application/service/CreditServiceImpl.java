@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 public class CreditServiceImpl implements CreditService {
 
     private final BigDecimal YEAR_CREDIT_COEFFICIENT = BigDecimal.valueOf(1.1);
+    private final BigDecimal ZERO_RETURN_SUM = BigDecimal.valueOf(0);
 
     @Inject
     private CreditDao creditDao;
@@ -27,18 +28,23 @@ public class CreditServiceImpl implements CreditService {
 
         Client client = clientDao.getClientById(clientId).orElse(null);
         BigDecimal creditTime = BigDecimal.valueOf(creditTimeInMonth);
-        BigDecimal monthPaymentForCredit = creditSum.divide(creditTime).multiply(YEAR_CREDIT_COEFFICIENT);
+        BigDecimal monthPaymentForCreditWithoutProcent = creditSum.divide(creditTime, 5, BigDecimal.ROUND_CEILING);
+        BigDecimal monthPaymentForCredit = monthPaymentForCreditWithoutProcent.multiply(YEAR_CREDIT_COEFFICIENT);
         boolean salaryCheck = monthSalary == monthSalary.max(monthPaymentForCredit);
+        int creditRate = YEAR_CREDIT_COEFFICIENT.multiply(BigDecimal.valueOf(100)).
+                subtract(BigDecimal.valueOf(100)).toBigInteger().shortValueExact();
 
         if (client != null) {
             if (client.getAge() < 50) {
                 if (salaryCheck) {
                     Credit credit = new Credit();
                     credit.setClientRefId(clientId);
-                    credit.setCreditRate(YEAR_CREDIT_COEFFICIENT.shortValueExact());
+                    credit.setCreditRate(creditRate);
                     credit.setDuration(creditTimeInMonth);
+                    credit.setReturnSum(ZERO_RETURN_SUM);
                     credit.setSumOfCredit(creditSum);
-                    return creditDao.insertCredit(credit);
+                    creditDao.insertCredit(credit);
+                    return credit;
                 }
                 // кинуть Exception что клиенту не одобрен кредит т.к. маленькая зп
                 return null;
@@ -55,11 +61,14 @@ public class CreditServiceImpl implements CreditService {
     public Credit payForCredit(final Integer creditId, final BigDecimal paySum) {
         Credit credit = creditDao.findCreditById(creditId).orElse(null);
         if (credit != null) {
-            credit.setReturnSum(credit.getReturnSum().add(paySum));
+            BigDecimal returnSum = credit.getReturnSum().add(paySum);
+            credit.setReturnSum(returnSum);
+            creditDao.insertCredit(credit);
             if (credit.getSumOfCredit().multiply(YEAR_CREDIT_COEFFICIENT).
                     compareTo(credit.getReturnSum()) == 0) {
-                // кинуть сообщение что кредит погашен
+                 //кинуть сообщение что кредит погашен
             }
+            return credit;
         }
         // кинуть Exception что такой кредит не найден
         return null;
