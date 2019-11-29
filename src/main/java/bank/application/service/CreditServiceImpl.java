@@ -2,6 +2,8 @@ package bank.application.service;
 
 import bank.application.dao.ClientDao;
 import bank.application.dao.CreditDao;
+import bank.application.exception.ClientException;
+import bank.application.exception.CreditException;
 import bank.application.model.Client;
 import bank.application.model.Credit;
 import org.springframework.stereotype.Component;
@@ -24,7 +26,7 @@ public class CreditServiceImpl implements CreditService {
 
     @Override
     public Credit addNewCredit(final Integer clientId, final BigDecimal creditSum,
-                               final int creditTimeInMonth, final BigDecimal monthSalary) {
+                               final int creditTimeInMonth, final BigDecimal monthSalary) throws CreditException, ClientException {
 
         Client client = clientDao.getClientById(clientId).orElse(null);
         BigDecimal creditTime = BigDecimal.valueOf(creditTimeInMonth);
@@ -46,19 +48,15 @@ public class CreditServiceImpl implements CreditService {
                     creditDao.insertCredit(credit);
                     return credit;
                 }
-                // кинуть Exception что клиенту не одобрен кредит т.к. маленькая зп
-                return null;
+                throw new CreditException("Клиенту не одобрен кредит т.к. представленных клиентом доходов недостаточно.");
             }
-            // кинуть Exception что клиент не проходит по возрасту
-            return null;
+            throw new CreditException("Клиенту не одобрен кредит т.к. клиент не подходит по возрасту.");
         }
-        // кинуть Exception что такого клиента не существует
-        return null;
-
+        throw new ClientException("Клиент не найден.");
     }
 
     @Override
-    public Credit payForCredit(final Integer creditId, final BigDecimal paySum) {
+    public Credit payForCredit(final Integer creditId, final BigDecimal paySum) throws CreditException {
         Credit credit = creditDao.findCreditById(creditId).orElse(null);
         if (credit != null) {
             BigDecimal returnSum = credit.getReturnSum().add(paySum);
@@ -70,24 +68,20 @@ public class CreditServiceImpl implements CreditService {
             }
             return credit;
         }
-        // кинуть Exception что такой кредит не найден
-        return null;
+        throw new CreditException("Кредит не найден.");
     }
 
     @Override
-    public Integer getClientRefId(final Integer creditId) {
+    public Integer getClientRefId(final Integer creditId) throws CreditException {
         Credit credit = creditDao.findCreditById(creditId).orElse(null);
         if (credit != null) {
             Integer clientRefId = credit.getClientRefId();
             if (clientRefId != null) {
                 return clientRefId;
             }
-            // кинуть Exception что кредит не привязан ни к какому клиенту
-            // удалить кредит
-            return null;
+            throw new CreditException("Кредит не привязан ни к одному клиенту.");
         }
-        // кинуть Exception что кредит не найден
-        return null;
+        throw new CreditException("Кредит не найден.");
     }
 
 }

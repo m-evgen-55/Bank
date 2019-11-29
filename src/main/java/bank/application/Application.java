@@ -12,8 +12,6 @@ public class Application {
         new SpringApplicationBuilder().sources(ApplicationConfig.class).run(args);
     }
 
-    // сделать Exception
-    // сделать логирование операций
     // сделать юниттесты
 
 }

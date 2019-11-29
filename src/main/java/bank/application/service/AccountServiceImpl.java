@@ -1,7 +1,11 @@
 package bank.application.service;
 
 import bank.application.dao.AccountDao;
+import bank.application.dao.ClientDao;
+import bank.application.exception.AccountException;
+import bank.application.exception.ClientException;
 import bank.application.model.Account;
+import bank.application.model.Client;
 import org.springframework.stereotype.Component;
 import javax.inject.Inject;
 import java.math.BigDecimal;
@@ -13,17 +17,24 @@ public class AccountServiceImpl implements AccountService {
     @Inject
     private AccountDao accountDao;
 
+    @Inject
+    private ClientDao clientDao;
+
 
     @Override
-    public Account addNewAccount(final Integer clientRefId, final BigDecimal putSum) {
-        Account account = new Account();
-        account.setClienReftId(clientRefId);
-        account.setBalance(putSum);
-        return accountDao.insertAccount(account);
+    public Account addNewAccount(final Integer clientRefId, final BigDecimal putSum) throws ClientException {
+        Client client = clientDao.getClientById(clientRefId).orElse(null);
+        if (client != null) {
+            Account account = new Account();
+            account.setClienReftId(clientRefId);
+            account.setBalance(putSum);
+            return accountDao.insertAccount(account);
+        }
+        throw new ClientException("Клиент не найден.");
     }
 
     @Override
-    public Account putMoney(final Integer accountId, final BigDecimal putSum) {
+    public Account putMoney(final Integer accountId, final BigDecimal putSum) throws AccountException {
         Account account = accountDao.findAccountById(accountId).orElse(null);
         if (account != null) {
             if (putSum.compareTo(BigDecimal.valueOf(0)) > 0) {
@@ -32,18 +43,16 @@ public class AccountServiceImpl implements AccountService {
                 account.setBalance(newAccountBallance);
                 return accountDao.insertAccount(account);
             }
-            // кинуть Exception что внесенная сумма отрицательна
-            return null;
+            throw new AccountException("Внесенная сумма отрицательна. Пожалуйста введите положительное число.");
         }
-        // кинуть Exception что аккаунт не найден
-        return null;
+        throw new AccountException("Счет не найден.");
     }
 
     @Override
-    public Account getMoney(final Integer accountId, final BigDecimal getSum) {
+    public Account getMoney(final Integer accountId, final BigDecimal getSum) throws AccountException {
         Account account = accountDao.findAccountById(accountId).orElse(null);
-        BigDecimal currentAccountBalance = account.getBalance();
         if (account != null) {
+            BigDecimal currentAccountBalance = account.getBalance();
             if (getSum.compareTo(BigDecimal.valueOf(0)) > 0) {
                 if (currentAccountBalance.compareTo(getSum) > 0 ||
                         currentAccountBalance.compareTo(getSum) == 0) {
@@ -51,45 +60,44 @@ public class AccountServiceImpl implements AccountService {
                     account.setBalance(newAccountBallance);
                     return accountDao.insertAccount(account);
                 }
-                // кинуть Exception что недостаточно средств на счету
-                return null;
+                throw new AccountException("Не достаточно средств на счету.");
             }
-            // кинуть Exception что запрашиваемая сумма отрицательна
-            return null;
+            throw new AccountException("Запрашиваемая сумма отрицательна. Пожалуйста введите положительное число.");
         }
-        // кинуть Exception что аккаунт не найден
-        return null;
+        throw new AccountException("Счет не найден.");
     }
 
     @Override
-    public Account findAccountById(final Integer accountId) {
+    public Account findAccountById(final Integer accountId) throws AccountException {
         Account account = accountDao.findAccountById(accountId).orElse(null);
         if (account != null) {
             return account;
         }
-        // кинуть Exception что аккаунт не найден
-        return null;
+        throw new AccountException("Счет не найден.");
     }
 
     @Override
-    public Integer getClientRefId(final Integer accountId) {
+    public Integer getClientRefId(final Integer accountId) throws AccountException {
         Account account = accountDao.findAccountById(accountId).orElse(null);
         if (account != null) {
             Integer clientRefId = account.getClienReftId();
             if (clientRefId != null) {
                 return clientRefId;
             }
-            // кинуть Exception что аккаунт не привязан ни к одному клиенту
-            // удалить аккаунт
-            return null;
+            throw new AccountException("Счет не привязан ни к одному клиенту.");
         }
-        // кинуть Exception что аккаунт не найден
-        return null;
+        throw new AccountException("Счет не найден.");
     }
 
     @Override
-    public void deleteAccount(final Integer accountId) {
-        accountDao.deleteAccount(accountId);
+    public void deleteAccount(final Integer accountId) throws AccountException {
+        Account account = accountDao.findAccountById(accountId).orElse(null);
+        if (account != null) {
+            accountDao.deleteAccount(accountId);
+        } else {
+            throw new AccountException("Счет не найден.");
+        }
+
     }
 
 }
