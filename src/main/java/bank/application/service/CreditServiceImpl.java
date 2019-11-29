@@ -45,6 +45,7 @@ public class CreditServiceImpl implements CreditService {
                     credit.setDuration(creditTimeInMonth);
                     credit.setReturnSum(ZERO_RETURN_SUM);
                     credit.setSumOfCredit(creditSum);
+                    credit.setPaidOff(false);
                     creditDao.insertCredit(credit);
                     return credit;
                 }
@@ -59,14 +60,18 @@ public class CreditServiceImpl implements CreditService {
     public Credit payForCredit(final Integer creditId, final BigDecimal paySum) throws CreditException {
         Credit credit = creditDao.findCreditById(creditId).orElse(null);
         if (credit != null) {
-            BigDecimal returnSum = credit.getReturnSum().add(paySum);
-            credit.setReturnSum(returnSum);
-            creditDao.insertCredit(credit);
-            if (credit.getSumOfCredit().multiply(YEAR_CREDIT_COEFFICIENT).
-                    compareTo(credit.getReturnSum()) == 0) {
-                 //кинуть сообщение что кредит погашен
+            if (!credit.isPaidOff()) {
+                BigDecimal returnSum = credit.getReturnSum().add(paySum);
+                credit.setReturnSum(returnSum);
+                creditDao.insertCredit(credit);
+                if (credit.getSumOfCredit().multiply(YEAR_CREDIT_COEFFICIENT).
+                        compareTo(credit.getReturnSum()) == 0) {
+                    credit.setPaidOff(true);
+                    creditDao.insertCredit(credit);
+                }
+                return credit;
             }
-            return credit;
+            throw new CreditException("Платеж не принят. Кредит погашен.");
         }
         throw new CreditException("Кредит не найден.");
     }

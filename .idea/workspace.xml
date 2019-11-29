@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="Поправил методы getCredit и payForCredit у кредита">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/exception/AccountException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/exception/ClientException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/application/exception/CreditException.java" afterDir="false" />
+    <list default="true" id="94342248-18d7-43dc-b0cf-1ea3349497c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/controller/CreditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/controller/CreditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/model/Credit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/model/Credit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/controller/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bank/application/model/Credit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bank/application/model/Credit.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574865860838</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Добавил Ecxeption">
+      <created>1575032792903</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575032792903</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,9 +196,19 @@
     <MESSAGE value="Перенес логику в сервис" />
     <MESSAGE value="Поправил методы putSum и getSum у аккаунта" />
     <MESSAGE value="Поправил методы getCredit и payForCredit у кредита" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поправил методы getCredit и payForCredit у кредита" />
+    <MESSAGE value="Добавил Ecxeption" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил Ecxeption" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/bank/application/service/CreditServiceImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="clientDao" language="JAVA" />

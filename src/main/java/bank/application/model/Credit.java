@@ -18,6 +18,7 @@ public class Credit {
     private int duration;
     private BigDecimal returnSum;
     private Integer clientRefId;
+    private boolean isPaidOff;
 
 
     public Integer getCreditId() {
@@ -62,6 +63,18 @@ public class Credit {
 
     public void setClientRefId(Integer clientRefId) {
         this.clientRefId = clientRefId;
+    }
+
+    public void setCreditId(Integer creditId) {
+        this.creditId = creditId;
+    }
+
+    public void setPaidOff(boolean paidOff) {
+        isPaidOff = paidOff;
+    }
+
+    public boolean isPaidOff() {
+        return isPaidOff;
     }
 
 }
