@@ -1,13 +1,16 @@
 package bank.application.controller;
 
 import bank.application.exception.ClientException;
+import bank.application.model.Account;
 import bank.application.model.Client;
+import bank.application.model.Credit;
 import bank.application.service.ClientService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javax.inject.Inject;
+import java.util.List;
 
 
 @RestController
@@ -31,14 +34,24 @@ public class ClientController {
         return clientService.getClientById(clientId);
     }
 
+    // добавить проверку на то, что клиента можно удалить только если у него нет не погашеных кредитов
+    // добавить автоматическое удаление всех аккаунтов и кредитов клиента при удалении клиента
     @RequestMapping(value = "/deleteClientById", method = RequestMethod.DELETE)
     public void deleteClientById(
             @RequestParam("clientId") Integer clientId) throws ClientException {
         clientService.deleteClient(clientId);
     }
 
-    // добавить метод, который возвращает список всех аккаунтов клиента
+    @RequestMapping(value = "/getClientAccounts", method = RequestMethod.GET)
+    public List<Account> getClientAccounts(
+            @RequestParam("clientId") Integer clientId) {
+        return clientService.getAllClientAccounts(clientId);
+    }
 
-    // добавить метод, который возвращает список всех кредитов клиента
+    @RequestMapping(value = "/getClientCredits", method = RequestMethod.GET)
+    public List<Credit> getClientCredits(
+            @RequestParam("clientId") Integer clientId) {
+        return clientService.getAllClientCredits(clientId);
+    }
 
 }

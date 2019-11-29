@@ -1,10 +1,10 @@
 package bank.application.dao;
 
 import bank.application.model.Account;
-import bank.application.model.Client;
 import bank.application.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import java.util.ArrayList;
 import java.util.Optional;
 
 
@@ -28,6 +28,12 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public void deleteAccount(Integer accountId) {
         accountRepository.deleteById(accountId);
+    }
+
+    @Override
+    public ArrayList<Account> getAllAccounts() {
+        ArrayList<Account> allAccounts = (ArrayList<Account>) accountRepository.findAll();
+        return allAccounts;
     }
 
 }
