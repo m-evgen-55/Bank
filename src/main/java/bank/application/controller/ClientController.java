@@ -33,9 +33,7 @@ public class ClientController {
             @RequestParam("clientId") Integer clientId) throws ClientException {
         return clientService.getClientById(clientId);
     }
-
-    // добавить проверку на то, что клиента можно удалить только если у него нет не погашеных кредитов
-    // добавить автоматическое удаление всех аккаунтов и кредитов клиента при удалении клиента
+    
     @RequestMapping(value = "/deleteClientById", method = RequestMethod.DELETE)
     public void deleteClientById(
             @RequestParam("clientId") Integer clientId) throws ClientException {

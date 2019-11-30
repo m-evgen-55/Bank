@@ -16,6 +16,7 @@ public class CreditServiceImpl implements CreditService {
 
     private final BigDecimal YEAR_CREDIT_COEFFICIENT = BigDecimal.valueOf(1.1);
     private final BigDecimal ZERO_RETURN_SUM = BigDecimal.valueOf(0);
+    private final int MAX_CLIENT_AGE = 50;
 
     @Inject
     private CreditDao creditDao;
@@ -24,6 +25,9 @@ public class CreditServiceImpl implements CreditService {
     private ClientDao clientDao;
 
 
+    // для одобрения кредита клиент должен отвечать следующим условиям:
+    // - быть меньше 50 лет
+    // - месячный пдатеж по кредиту с учетом процентов должен быть меньше его месячной зп
     @Override
     public Credit addNewCredit(final Integer clientId, final BigDecimal creditSum,
                                final int creditTimeInMonth, final BigDecimal monthSalary) throws CreditException, ClientException {
@@ -37,7 +41,7 @@ public class CreditServiceImpl implements CreditService {
                 subtract(BigDecimal.valueOf(100)).toBigInteger().shortValueExact();
 
         if (client != null) {
-            if (client.getAge() < 50) {
+            if (client.getAge() < MAX_CLIENT_AGE) {
                 if (salaryCheck) {
                     Credit credit = new Credit();
                     credit.setClientRefId(clientId);
@@ -56,6 +60,7 @@ public class CreditServiceImpl implements CreditService {
         throw new ClientException("Клиент не найден.");
     }
 
+    // в методе осуществляется проверка погашен ли кредит. Нельзя внести платеж по погашенному кредиту
     @Override
     public Credit payForCredit(final Integer creditId, final BigDecimal paySum) throws CreditException {
         Credit credit = creditDao.findCreditById(creditId).orElse(null);
