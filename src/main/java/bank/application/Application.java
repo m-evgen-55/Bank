@@ -12,6 +12,4 @@ public class Application {
         new SpringApplicationBuilder().sources(ApplicationConfig.class).run(args);
     }
 
-    // сделать юниттесты
-
 }
